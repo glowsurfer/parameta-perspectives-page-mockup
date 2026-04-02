@@ -221,8 +221,8 @@ body::after {
 .speakers-title em { font-style:italic; color:var(--gold-hi); }
 .speakers-grid {
   display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:32px;
+  grid-template-columns:repeat(7,1fr);
+  gap:28px;
   align-items:start;
 }
 .speaker-card { display:flex; flex-direction:column; align-items:center; text-align:center; }
@@ -233,11 +233,28 @@ body::after {
   background: linear-gradient(160deg, rgba(17,24,32,0.9) 0%, rgba(13,27,42,0.7) 100%);
   border-bottom: 2px solid var(--gold-line);
 }
+/* Placeholder person icon — shown when image fails to load */
+.speaker-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='38' r='18' fill='none' stroke='%23BFA06A' stroke-width='1.5' opacity='0.3'/%3E%3Cpath d='M18 85 Q18 62 50 62 Q82 62 82 85' fill='none' stroke='%23BFA06A' stroke-width='1.5' opacity='0.3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  background-size: 60%;
+  z-index: 0;
+}
 .speaker-img-wrap img {
   width:100%; height:100%;
   object-fit:cover; object-position:center top;
   display:block;
+  position: relative;
+  z-index: 1;
   transition:transform 0.4s ease;
+}
+/* Hide broken image icon, show placeholder behind */
+.speaker-img-wrap img[src=""], .speaker-img-wrap img:not([src]) {
+  opacity: 0;
 }
 .speaker-card:hover .speaker-img-wrap img { transform:scale(1.04); }
 .speaker-name {
@@ -541,7 +558,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
 
     <div class="speaker-card reveal">
       <div class="speaker-img-wrap">
-        <img src="speaker-rhys.png" alt="Rhys Spencer">
+        <img src="speaker-rhys.png" alt="Rhys Spencer" onerror="this.style.opacity='0'">
       </div>
       <div class="speaker-name">Rhys Spencer</div>
       <div class="speaker-title">Director &amp; APAC Head</div>
@@ -550,7 +567,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
 
     <div class="speaker-card reveal reveal-d1">
       <div class="speaker-img-wrap">
-        <img src="speaker-sam.png" alt="Sam Ahmed">
+        <img src="speaker-sam.png" alt="Sam Ahmed" onerror="this.style.opacity='0'">
       </div>
       <div class="speaker-name">Sam Ahmed</div>
       <div class="speaker-title">Managing Director</div>
@@ -559,7 +576,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
 
     <div class="speaker-card reveal reveal-d2">
       <div class="speaker-img-wrap">
-        <img src="speaker-taimur.png" alt="Taimur Baig">
+        <img src="speaker-taimur.png" alt="Taimur Baig" onerror="this.style.opacity='0'">
       </div>
       <div class="speaker-name">Taimur Baig</div>
       <div class="speaker-title">Managing Director &amp; Chief Economist</div>
@@ -568,7 +585,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
 
     <div class="speaker-card reveal reveal-d1">
       <div class="speaker-img-wrap">
-        <img src="speaker-alice.png" alt="Alice Chen">
+        <img src="speaker-alice.png" alt="Alice Chen" onerror="this.style.opacity='0'">
       </div>
       <div class="speaker-name">Alice Chen</div>
       <div class="speaker-title">Co-Founder &amp; General Counsel</div>
@@ -577,7 +594,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
 
     <div class="speaker-card reveal reveal-d2">
       <div class="speaker-img-wrap">
-        <img src="speaker-daniell.png" alt="Daniel Rabetti">
+        <img src="speaker-daniell.png" alt="Daniel Rabetti" onerror="this.style.opacity='0'">
       </div>
       <div class="speaker-name">Daniel Rabetti</div>
       <div class="speaker-title">Professor of Accounting &amp; Finance</div>
@@ -586,7 +603,16 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
 
     <div class="speaker-card reveal reveal-d3">
       <div class="speaker-img-wrap">
-        <img src="speaker-shery.png" alt="Shery Chan">
+        <img src="speaker-danl.png" alt="Dan Liebau" onerror="this.style.opacity='0'">
+      </div>
+      <div class="speaker-name">Dan Liebau</div>
+      <div class="speaker-title">Founder &amp; CEO</div>
+      <div class="speaker-company">Lightbulb Capital</div>
+    </div>
+
+    <div class="speaker-card reveal reveal-d3">
+      <div class="speaker-img-wrap">
+        <img src="speaker-shery.png" alt="Shery Chan" onerror="this.style.opacity='0'">
       </div>
       <div class="speaker-name">Shery Chan</div>
       <div class="speaker-title">AI Strategy &amp; Adoption</div>
