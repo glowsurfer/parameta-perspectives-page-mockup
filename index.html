@@ -221,7 +221,7 @@ body::after {
 .speakers-title em { font-style:italic; color:var(--gold-hi); }
 .speakers-grid {
   display:grid;
-  grid-template-columns:repeat(7,1fr);
+  grid-template-columns:repeat(8,1fr);
   gap:28px;
   align-items:start;
 }
@@ -381,6 +381,31 @@ body::after {
 .lcell-sub { font-size:11px; color:var(--slate); margin-top:4px; }
 
 /* ============================================================
+   WINES
+   ============================================================ */
+.wines { padding:100px 60px; background:var(--charcoal); border-top:1px solid var(--gold-line); border-bottom:1px solid var(--gold-line); }
+.wines-inner { max-width:1380px; margin:0 auto; }
+.wines-hdr { text-align:center; margin-bottom:60px; }
+.wines-h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,3.6vw,48px); font-weight:300; color:var(--cream); margin-top:14px; margin-bottom:18px; line-height:1.2; }
+.wines-h2 em { font-style:italic; color:var(--gold-hi); }
+.wines-intro { font-size:14.5px; font-weight:300; line-height:1.9; color:var(--cream-dim); max-width:680px; margin:0 auto; }
+.wines-grid { display:flex; flex-direction:column; gap:2px; }
+.wine-card-champagne { width:100%; }
+.wines-bottom-row { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+.wines-col { display:flex; flex-direction:column; gap:2px; }
+.wines-col-label { font-size:9px; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color:var(--slate); opacity:0.55; padding:14px 28px 6px; }
+.wine-card { background:rgba(6,12,18,0.6); border:1px solid rgba(191,160,106,0.08); padding:32px 28px; position:relative; transition:background 0.3s; }
+.wine-card:hover { background:rgba(191,160,106,0.04); }
+.wine-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+.wine-card:hover::before { transform:scaleX(1); }
+.wine-type-label { font-size:9px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--copper); margin-bottom:10px; }
+.wine-world { display:inline-block; font-size:8.5px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold-line); padding:3px 9px; margin-bottom:16px; }
+.wine-name { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:400; color:var(--cream); line-height:1.2; margin-bottom:6px; }
+.wine-sub { font-size:11.5px; font-weight:300; color:var(--gold); letter-spacing:0.04em; line-height:1.5; margin-bottom:14px; }
+.wine-desc { font-size:12.5px; font-weight:300; line-height:1.8; color:var(--cream-dim); }
+@media(max-width:700px) { .wines-bottom-row { grid-template-columns:1fr; } .wines { padding:72px 24px; } }
+
+/* ============================================================
    REGISTER
    ============================================================ */
 .register { padding:100px 60px; background:linear-gradient(160deg, rgba(17,24,32,0.9) 0%, rgba(191,160,106,0.04) 50%, rgba(6,12,18,0.95) 100%); border-top:1px solid var(--gold-line); }
@@ -489,7 +514,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
 <section class="hero">
   <div class="hero-bg img-container">
     <div class="img-fallback fb-hero"></div>
-    <img class="real-photo" alt="67 Pall Mall Singapore — The Cairnhill Paterson Room"
+    <img class="real-photo" alt="67 Pall Mall Singapore — The Orchard Light"
       data-src="img-hero.jpg">
   </div>
   <div class="hero-grad-base"></div>
@@ -615,6 +640,15 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
       <div class="speaker-company">Standard Chartered Bank</div>
     </div>
 
+    <div class="speaker-card reveal reveal-d4">
+      <div class="speaker-img-wrap">
+        <img src="speaker-carolyn.png" alt="Carolyn Chin-Parry" onerror="this.style.opacity='0'">
+      </div>
+      <div class="speaker-name">Carolyn Chin-Parry</div>
+      <div class="speaker-title">Managing Director</div>
+      <div class="speaker-company">Ashmark &amp; Co</div>
+    </div>
+
   </div>
 </section>
 
@@ -638,7 +672,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
         <img class="real-photo" alt="67 Pall Mall Singapore — private dining" data-src="img-about.jpg">
       </div>
       <div class="about-img-cap">
-        <div class="about-img-cap-name">The Cairnhill Paterson Room</div>
+        <div class="about-img-cap-name">The Orchard Light</div>
         <div class="about-img-cap-sub">67 Pall Mall · Singapore</div>
       </div>
     </div>
@@ -706,15 +740,15 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
   </div>
   <div class="venue-text-col">
     <div class="section-label"><div class="section-label-bar"></div><span class="section-label-text">The Venue</span></div>
-    <h2 class="venue-h2">The Cairnhill Paterson Room<br><em>67 Pall Mall, Singapore</em></h2>
+    <h2 class="venue-h2">The Orchard Light<br><em>67 Pall Mall, Singapore</em></h2>
     <p class="venue-p">Occupying the penthouse of Shaw Building on Orchard Road, 67 Pall Mall Singapore is the city-state's most distinguished private members' club — an art deco homage to 1920s Shanghai with a touch of British aristocracy. Its award-winning interior, a 6-metre wine tower centrepiece, and floor-to-ceiling views create an environment where serious conversation thrives.</p>
     <ul class="venue-list">
-      <li>Dedicated fine wine and canapé reception from 18:30</li>
+      <li>Champagne reception from 18:30, followed by sommelier-led wine tasting after the panels</li>
       <li>Shaw Building, 1 Scotts Road, Singapore 228208</li>
       <li>Orchard MRT — 4-minute walk · Valet parking available</li>
       <li>Dress Code — in keeping with the venue's dress code of sleeved shirts, smart trousers and closed-toe footwear for men; smart casual for ladies</li>
     </ul>
-    <div class="venue-badge"><span>67 Pall Mall · Singapore · Cairnhill Paterson Room</span></div>
+    <div class="venue-badge"><span>67 Pall Mall · Singapore · The Orchard Light</span></div>
   </div>
 </section>
 
@@ -760,7 +794,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
         <div class="lcell-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
         </div>
-        <div class="lcell-lbl">Location</div><div class="lcell-val">67 Pall Mall<br>Singapore</div><div class="lcell-sub">Cairnhill Paterson Room</div>
+        <div class="lcell-lbl">Location</div><div class="lcell-val">67 Pall Mall<br>Singapore</div><div class="lcell-sub">The Orchard Light</div>
       </div>
       <div class="lcell">
         <div class="lcell-icon">
@@ -768,6 +802,69 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
         </div>
         <div class="lcell-lbl">Attendance</div><div class="lcell-val">Senior Professionals</div><div class="lcell-sub">Financial Markets Only</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WINES -->
+<section class="wines" id="wines">
+  <div class="wines-inner">
+    <div class="wines-hdr reveal">
+      <div class="section-label" style="justify-content:center">
+        <div class="section-label-bar"></div>
+        <span class="section-label-text">The Wines</span>
+        <div class="section-label-bar"></div>
+      </div>
+      <h2 class="wines-h2">An evening of <em>exceptional</em> wine</h2>
+      <p class="wines-intro">The evening opens with a champagne reception before the panels. Following the discussion, a resident sommelier will guide guests through a curated tasting of four wines — a journey across old world and new world, exploring the contrasts in terroir, style, and expression.</p>
+    </div>
+    <div class="wines-grid reveal reveal-d1">
+
+      <div class="wine-card wine-card-champagne">
+        <div class="wine-type-label">Champagne · Reception</div>
+        <div class="wine-world">Old World</div>
+        <h3 class="wine-name">Jacquesson</h3>
+        <p class="wine-sub">Cuvée 747 · Extra-Brut</p>
+        <p class="wine-desc">A non-vintage cuvée of rare precision and complexity from one of Champagne's most respected small houses. Cuvée 747 is celebrated for its balance of freshness and depth — an ideal opening to the evening.</p>
+      </div>
+
+      <div class="wines-bottom-row">
+        <div class="wines-col">
+          <div class="wines-col-label">Whites</div>
+          <div class="wine-card">
+            <div class="wine-type-label">White · Tasting</div>
+            <div class="wine-world">Old World</div>
+            <h3 class="wine-name">Domaine de Montille</h3>
+            <p class="wine-sub">Chassagne-Montrachet · Burgundy, France</p>
+            <p class="wine-desc">From one of Burgundy's most celebrated domaines, this Chassagne-Montrachet expresses the classic tension of white Burgundy — mineral precision, restrained richness, and exceptional length.</p>
+          </div>
+          <div class="wine-card">
+            <div class="wine-type-label">White · Tasting</div>
+            <div class="wine-world">New World</div>
+            <h3 class="wine-name">Tolpuddle Vineyard</h3>
+            <p class="wine-sub">Chardonnay 2024 · Coal River Valley, Tasmania</p>
+            <p class="wine-desc">Tasmania's cool climate produces Chardonnay of striking elegance. Tolpuddle is one of Australia's most lauded single-vineyard whites — a benchmark new world expression with Burgundian discipline.</p>
+          </div>
+        </div>
+        <div class="wines-col">
+          <div class="wines-col-label">Reds</div>
+          <div class="wine-card">
+            <div class="wine-type-label">Red · Tasting</div>
+            <div class="wine-world">New World</div>
+            <h3 class="wine-name">Silver Oak</h3>
+            <p class="wine-sub">Cabernet Sauvignon 2020 · Alexander Valley, California</p>
+            <p class="wine-desc">A Napa icon, Silver Oak's Alexander Valley Cabernet is defined by its approachable richness, silky tannins, and signature vanilla-tinged depth — a quintessential expression of California's finest appellation.</p>
+          </div>
+          <div class="wine-card">
+            <div class="wine-type-label">Red · Tasting</div>
+            <div class="wine-world">Old World</div>
+            <h3 class="wine-name">Domaine Duroché</h3>
+            <p class="wine-sub">Gevrey-Chambertin, Champ 2023 · Burgundy, France</p>
+            <p class="wine-desc">From the northern tip of the Côte de Nuits, Domaine Duroché's Gevrey-Chambertin is a fine-boned, aromatic Pinot Noir — earthy, precise, and deeply expressive of one of Burgundy's most celebrated appellations.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -879,15 +976,41 @@ window.addEventListener('scroll', function() {
   }
 }, { passive: true });
 
-/* Form submission — posts to Google Apps Script → Google Sheet */
+/* Form submission — posts to Google Apps Script → Google Sheet + HubSpot */
 var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDHFNljQg7iDyZeoH1WpwijLfCnIv_-pBYGxBPfczPp_ubFQtcvzqZTmv8Zr3HGE8s/exec';
+var HS_PORTAL_ID = '146128163';
+var HS_FORM_ID   = 'c2966a85-3232-47dc-84f6-196ce5fe60e6';
+
+function submitToHubSpot(data) {
+  var hsData = {
+    fields: [
+      { name: 'firstname',   value: data.fullName.split(' ')[0] },
+      { name: 'lastname',    value: data.fullName.split(' ').slice(1).join(' ') || '' },
+      { name: 'email',       value: data.email },
+      { name: 'company',     value: data.institution },
+      { name: 'jobtitle',    value: data.jobTitle },
+      { name: 'message',     value: data.focus }
+    ],
+    context: {
+      pageUri:  window.location.href,
+      pageName: document.title
+    }
+  };
+  return fetch(
+    'https://api.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL_ID + '/' + HS_FORM_ID,
+    {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(hsData)
+    }
+  );
+}
 
 function handleSubmit(e) {
   e.preventDefault();
-  var btn = document.getElementById('reg-btn');
+  var btn  = document.getElementById('reg-btn');
   var form = e.target;
 
-  // Collect form values
   var data = {
     timestamp:   new Date().toISOString(),
     fullName:    form.querySelector('[name="fullName"]').value,
@@ -900,25 +1023,23 @@ function handleSubmit(e) {
   btn.textContent = 'Submitting...';
   btn.disabled = true;
 
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  })
-  .then(function() {
+  function showSuccess() {
     btn.textContent = '✓  Request Received — Our Singapore Team Will Be In Touch To Confirm Attendance';
-    btn.style.background = '#3a6b4f';
-    btn.style.color = '#EDE8DF';
+    btn.style.background    = '#3a6b4f';
+    btn.style.color         = '#EDE8DF';
     btn.style.letterSpacing = '0.1em';
-  })
-  .catch(function() {
-    // Even if fetch gives a network error due to no-cors, Apps Script still receives it
-    btn.textContent = '✓  Request Received — Our Singapore Team Will Be In Touch To Confirm Attendance';
-    btn.style.background = '#3a6b4f';
-    btn.style.color = '#EDE8DF';
-    btn.style.letterSpacing = '0.1em';
-  });
+  }
+
+  // Fire both calls simultaneously — Google Sheets + HubSpot
+  Promise.allSettled([
+    fetch(SCRIPT_URL, {
+      method:  'POST',
+      mode:    'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(data)
+    }),
+    submitToHubSpot(data)
+  ]).then(showSuccess);
 }
 
 /* Run after page load */
