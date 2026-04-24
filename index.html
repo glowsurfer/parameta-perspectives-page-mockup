@@ -221,8 +221,8 @@ body::after {
 .speakers-title em { font-style:italic; color:var(--gold-hi); }
 .speakers-grid {
   display:grid;
-  grid-template-columns:repeat(8,1fr);
-  gap:28px;
+  grid-template-columns:repeat(5,1fr);
+  gap:36px 28px;
   align-items:start;
 }
 .speaker-card { display:flex; flex-direction:column; align-items:center; text-align:center; }
@@ -259,17 +259,17 @@ body::after {
 .speaker-card:hover .speaker-img-wrap img { transform:scale(1.04); }
 .speaker-name {
   font-family:'Cormorant Garamond',serif;
-  font-size:16px; font-weight:400;
+  font-size:20px; font-weight:400;
   color:var(--cream); line-height:1.2;
-  margin-bottom:5px;
+  margin-bottom:6px;
 }
 .speaker-title {
-  font-size:11px; font-weight:300;
+  font-size:12px; font-weight:300;
   color:var(--gold); letter-spacing:0.04em;
   line-height:1.5; margin-bottom:3px;
 }
 .speaker-company {
-  font-size:11px; font-weight:300;
+  font-size:12px; font-weight:300;
   color:var(--slate); letter-spacing:0.04em;
   line-height:1.4;
 }
@@ -455,6 +455,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
 .reveal-d1 { transition-delay:0.1s; }
 .reveal-d2 { transition-delay:0.2s; }
 .reveal-d3 { transition-delay:0.3s; }
+.reveal-d4 { transition-delay:0.4s; }
 
 /* ============================================================
    RESPONSIVE
@@ -468,7 +469,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
   .strip { grid-template-columns:1fr 1fr; height:200px; }
   .strip .strip-cell:last-child { display:none; }
   .speakers { padding:60px 24px; }
-  .speakers-grid { grid-template-columns:repeat(3,1fr); gap:24px; }
+  .speakers-grid { grid-template-columns:repeat(2,1fr); gap:32px 20px; }
   .about { grid-template-columns:1fr; gap:48px; padding:72px 24px; }
   .about-img-col { display:none; }
   .themes { padding:72px 24px; }
@@ -604,7 +605,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
       <div class="speaker-company">DBS Bank</div>
     </div>
 
-    <div class="speaker-card reveal reveal-d1">
+    <div class="speaker-card reveal reveal-d3">
       <div class="speaker-img-wrap">
         <img src="speaker-alice.png" alt="Alice Chen" onerror="this.style.opacity='0'">
       </div>
@@ -613,7 +614,16 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
       <div class="speaker-company">InvestaX</div>
     </div>
 
-    <div class="speaker-card reveal reveal-d2">
+    <div class="speaker-card reveal reveal-d4">
+      <div class="speaker-img-wrap">
+        <img src="speaker-kelvin.png" alt="Kelvin Tan" onerror="this.style.opacity='0'">
+      </div>
+      <div class="speaker-name">Kelvin Tan</div>
+      <div class="speaker-title">Head of Tokenisation, Global Markets</div>
+      <div class="speaker-company">DBS</div>
+    </div>
+
+    <div class="speaker-card reveal">
       <div class="speaker-img-wrap">
         <img src="speaker-danielr.png" alt="Daniel Rabetti" onerror="this.style.opacity='0'">
       </div>
@@ -622,7 +632,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
       <div class="speaker-company">NUS</div>
     </div>
 
-    <div class="speaker-card reveal reveal-d3">
+    <div class="speaker-card reveal reveal-d1">
       <div class="speaker-img-wrap">
         <img src="speaker-danl.png" alt="Dan Liebau" onerror="this.style.opacity='0'">
       </div>
@@ -631,13 +641,22 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
       <div class="speaker-company">Lightbulb Capital</div>
     </div>
 
-    <div class="speaker-card reveal reveal-d3">
+    <div class="speaker-card reveal reveal-d2">
       <div class="speaker-img-wrap">
         <img src="speaker-shery.png" alt="Shery Chan" onerror="this.style.opacity='0'">
       </div>
       <div class="speaker-name">Shery Chan</div>
       <div class="speaker-title">AI Strategy &amp; Adoption</div>
       <div class="speaker-company">Standard Chartered Bank</div>
+    </div>
+
+    <div class="speaker-card reveal reveal-d3">
+      <div class="speaker-img-wrap">
+        <img src="speaker-audrey.png" alt="Audrey Ong" onerror="this.style.opacity='0'">
+      </div>
+      <div class="speaker-name">Audrey Ong</div>
+      <div class="speaker-title">Vice Chair, Smart Nation Chapter</div>
+      <div class="speaker-company">SGTech</div>
     </div>
 
     <div class="speaker-card reveal reveal-d4">
