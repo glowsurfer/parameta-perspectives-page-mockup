@@ -917,17 +917,7 @@ footer { padding:44px 60px; border-top:1px solid rgba(255,255,255,0.05); display
         <input type="text" name="jobTitle" class="form-input" placeholder="Job Title" required>
       </div>
       <div class="form-row">
-        <select name="focus" class="form-input form-select">
-          <option value="" disabled selected>Area of Focus</option>
-          <option>Trading &amp; Execution</option>
-          <option>Risk Management</option>
-          <option>Portfolio Management</option>
-          <option>Quantitative Analysis</option>
-          <option>Compliance &amp; Regulation</option>
-          <option>Technology &amp; Innovation</option>
-          <option>Treasury</option>
-          <option>Other</option>
-        </select>
+        <textarea name="comments" class="form-input" placeholder="We welcome any feedback and suggestions" rows="4" style="resize:vertical;line-height:1.6;"></textarea>
       </div>
       <button type="submit" class="btn-reg" id="reg-btn">Register Interest</button>
     </form>
@@ -1004,7 +994,7 @@ window.addEventListener('scroll', function() {
 }, { passive: true });
 
 /* Form submission — posts to Google Apps Script → Google Sheet + HubSpot */
-var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDHFNljQg7iDyZeoH1WpwijLfCnIv_-pBYGxBPfczPp_ubFQtcvzqZTmv8Zr3HGE8s/exec';
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxS2BfGL6ygef-mZllet3qpSIQbw32wp3YMO2pMszvw05lUHiGGMeKq_CWzlrt5FaFJ/exec';
 var HS_PORTAL_ID = '146128163';
 var HS_FORM_ID   = 'c2966a85-3232-47dc-84f6-196ce5fe60e6';
 
@@ -1044,14 +1034,14 @@ function handleSubmit(e) {
     email:       form.querySelector('[name="email"]').value,
     institution: form.querySelector('[name="institution"]').value,
     jobTitle:    form.querySelector('[name="jobTitle"]').value,
-    focus:       form.querySelector('[name="focus"]').value
+    comments:    form.querySelector('[name="comments"]').value
   };
 
   btn.textContent = 'Submitting...';
   btn.disabled = true;
 
   function showSuccess() {
-    btn.textContent = '✓  Request Received — Our Singapore Team Will Be In Touch To Confirm Attendance';
+    btn.textContent = '✓  Thank You — We Will Be In Touch About The Next Edition';
     btn.style.background    = '#3a6b4f';
     btn.style.color         = '#EDE8DF';
     btn.style.letterSpacing = '0.1em';
